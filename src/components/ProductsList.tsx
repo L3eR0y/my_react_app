@@ -1,16 +1,39 @@
-import { Product } from './Product';
+import Product from './Product';
 import { IProduct } from '../models/product.model';
+import React from 'react';
 
-interface ProductProps {
+interface ProductListProps {
   products: IProduct[]
 }
 
-export function ProductsList({ products }: ProductProps) {
-  return (
-    <div className="flex flex-col w-96 py-5 px-5 h-full">
-      <Product />
-      <Product />
-      <Product />
-    </div>
-  )
+class ProductsList extends React.Component<ProductListProps> {
+  constructor(props:ProductListProps) {
+    super(props)
+  }
+
+  render() {
+    return (
+      <div className="flex flex-col h-full max-w-4xl">
+        {
+          this.props.products.map((product: IProduct) => {
+            return <Product key={product.id} product={product} />
+          })
+        }
+      </div>
+    )
+    }
 }
+
+// export function ProductsList({ products }: ProductListProps) {
+//   return (
+//     <div className="flex flex-col h-full max-w-4xl">
+//       {
+//         products.map((product: IProduct) => {
+//           return <Product key={product.id} product={product} />
+//         })
+//       }
+//     </div>
+//   )
+// }
+
+export default ProductsList;
