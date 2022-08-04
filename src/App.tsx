@@ -12,7 +12,8 @@ function App() {
   }
 
   return (
-    <div className='w-screen h-screen flex'>
+    <div className='w-screen h-screen flex flex-wrap overflow-hidden'>
+      <div className='flex w-screen border justify-center py-5'>HEADER</div>
       <div className='w-1/6 flex flex-col border-r p-5'>
         <div className="border my-1 py-6 px-4 rounded-xl col-10 text-center bg-sky-600 hover:bg-sky-700 font-bold text-white" 
           onClick={ (e)=>{ onNavigateClick('/') } }>HOME</div>

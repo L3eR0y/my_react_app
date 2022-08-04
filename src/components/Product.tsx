@@ -1,5 +1,8 @@
 import React from 'react';
+import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
 import { IProduct } from '../models/product.model';
+import Counter from './Counter';
+
 
 interface ProductProps {
   product: IProduct
@@ -13,7 +16,8 @@ class Product extends React.Component<ProductProps> {
   render() {
     const product = this.props.product
     return (
-    <div className="border my-1 py-6 px-4 rounded-xl flex flex-col items-center align-center justify-center">
+    <div className="border relative my-1 py-6 px-4 rounded-xl flex flex-col items-center align-center justify-center">
+        <Counter />
         <img className='w-1/4 py-2' src={product.image} alt={product.title}/>
         <div className='w-full flex py-2 px-6 border rounded-xl'>
           <div className='flex grow justify-center'>

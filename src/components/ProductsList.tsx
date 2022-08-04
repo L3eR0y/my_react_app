@@ -21,19 +21,7 @@ class ProductsList extends React.Component<ProductListProps> {
         }
       </div>
     )
-    }
+  }
 }
-
-// export function ProductsList({ products }: ProductListProps) {
-//   return (
-//     <div className="flex flex-col h-full max-w-4xl">
-//       {
-//         products.map((product: IProduct) => {
-//           return <Product key={product.id} product={product} />
-//         })
-//       }
-//     </div>
-//   )
-// }
 
 export default ProductsList;
